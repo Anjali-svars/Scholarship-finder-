@@ -1,0 +1,6 @@
+{
+  "name": "AI-Based Scholarship Recommendation System for Students",
+  "description": "Intelligent scholarship discovery, eligibility analysis, and application tracking powered by transparent weighted scoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

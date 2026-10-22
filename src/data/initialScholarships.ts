@@ -1,0 +1,449 @@
+import { Scholarship, StudentProfile } from '../types/scholarship';
+
+export const INITIAL_SCHOLARSHIPS: Scholarship[] = [
+  {
+    id: 'sch-001',
+    name: 'Central Sector Scheme of Scholarships for College & University Students',
+    provider: 'Department of Higher Education, Ministry of Education (Govt. of India)',
+    description: 'Financial assistance to meritorious students from low-income families to meet day-to-day expenses while pursuing higher studies in colleges and universities.',
+    eligible_courses: ['Engineering', 'Medicine', 'Pure Sciences', 'Commerce', 'Arts & Humanities', 'Computer Science'],
+    education_level: ['Undergraduate', 'Postgraduate'],
+    min_marks: 80.0,
+    max_family_income: 450000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: '₹20,000 / year',
+    award_amount_val: 20000,
+    application_deadline: '2026-11-30',
+    required_documents: [
+      'Class 12th Board Marksheet',
+      'Family Income Certificate issued by Revenue Officer',
+      'Valid Student Aadhaar Card',
+      'College Admission Bonafide Certificate',
+      'Bank Account Passbook (Aadhaar Seeded)'
+    ],
+    official_url: 'https://scholarships.gov.in',
+    eligibility_conditions: [
+      'Must have scored >80th percentile in relevant stream in Class 12 board examination',
+      'Family annual income must not exceed ₹4,50,000',
+      'Pursuing regular full-time degree program in a recognized institution'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Official Scheme'
+  },
+  {
+    id: 'sch-002',
+    name: 'Pragati Scholarship Scheme for Girl Students (Technical Degree)',
+    provider: 'All India Council for Technical Education (AICTE)',
+    description: 'Scheme to encourage and empower young women to pursue technical education in AICTE-approved institutions across India.',
+    eligible_courses: ['Engineering', 'Computer Science', 'Technology', 'Architecture'],
+    education_level: ['Undergraduate'],
+    min_marks: 60.0,
+    max_family_income: 800000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'Female',
+    disability_friendly: true,
+    award_amount: '₹50,000 / year',
+    award_amount_val: 50000,
+    application_deadline: '2026-12-15',
+    required_documents: [
+      'AICTE Approved College Admission Letter',
+      '10th and 12th Standard Marksheets',
+      'State Competent Authority Family Income Certificate',
+      'Tuition Fee Receipt for Current Academic Session',
+      'Undertaking of Single / Maximum Two Girl Children in Family'
+    ],
+    official_url: 'https://www.aicte-india.org',
+    eligibility_conditions: [
+      'Only female candidates enrolled in 1st year of technical degree program',
+      'Maximum two girl children per family eligible',
+      'Family annual income should not be more than ₹8 Lakh per annum'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Official Scheme'
+  },
+  {
+    id: 'sch-003',
+    name: 'INSPIRE Scholarship for Higher Education (SHE)',
+    provider: 'Department of Science & Technology (DST), Govt. of India',
+    description: 'Attracting talented youth to study fundamental and natural sciences at undergraduate and post-graduate levels.',
+    eligible_courses: ['Pure Sciences', 'Mathematics', 'Physics', 'Chemistry', 'Biology'],
+    education_level: ['Undergraduate', 'Postgraduate'],
+    min_marks: 85.0,
+    max_family_income: 1200000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: '₹80,000 / year',
+    award_amount_val: 80000,
+    application_deadline: '2026-11-15',
+    required_documents: [
+      'Class 12th Board Scorecard (Top 1% cut-off proof)',
+      'B.Sc/M.Sc Enrollment Certificate',
+      'Endorsement Form signed by Principal/Director',
+      'Government Identity Proof'
+    ],
+    official_url: 'https://online-inspire.gov.in',
+    eligibility_conditions: [
+      'Top 1% rank in Class 12th board exams or KVPY/JEE/NEET rank holders within top brackets',
+      'Pursuing B.Sc., B.S., or Int. M.Sc. in natural or basic sciences',
+      'Age between 17 and 22 years'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Official Scheme'
+  },
+  {
+    id: 'sch-004',
+    name: 'Post-Matric Scholarship for SC/ST Students',
+    provider: 'Ministry of Social Justice and Empowerment / Tribal Affairs',
+    description: 'Comprehensive financial support to students belonging to Scheduled Castes and Scheduled Tribes to pursue higher education post-matriculation.',
+    eligible_courses: ['Engineering', 'Medicine', 'Commerce', 'Arts & Humanities', 'Computer Science', 'Pure Sciences', 'Diploma'],
+    education_level: ['High School', 'Diploma', 'Undergraduate', 'Postgraduate', 'Doctoral'],
+    min_marks: 50.0,
+    max_family_income: 250000,
+    eligible_states: ['All India'],
+    applicable_categories: ['SC', 'ST'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: 'Full Tuition + ₹13,500 Maintenance Allowance',
+    award_amount_val: 45000,
+    application_deadline: '2026-12-31',
+    required_documents: [
+      'Official SC/ST Caste Certificate',
+      'Income Certificate (<₹2.5 Lakh)',
+      'Previous Qualifying Examination Marksheet',
+      'Residential/Domicile Certificate',
+      'Fee Structure Receipt from Recognized College'
+    ],
+    official_url: 'https://scholarships.gov.in',
+    eligibility_conditions: [
+      'Belongs to SC or ST community',
+      'Annual household income not exceeding ₹2,50,000',
+      'Enrolled in post-matriculation recognized courses'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Official Scheme'
+  },
+  {
+    id: 'sch-005',
+    name: 'Tata Trusts Medical and Healthcare Scholarship',
+    provider: 'Tata Trusts Foundation',
+    description: 'Merit-cum-need grant for students pursuing undergraduate and postgraduate degrees in MBBS, BDS, Nursing, and Allied Health Sciences in India.',
+    eligible_courses: ['Medicine', 'Healthcare', 'Nursing', 'Dentistry', 'Pharmacy'],
+    education_level: ['Undergraduate', 'Postgraduate'],
+    min_marks: 70.0,
+    max_family_income: 600000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: '₹60,000 / year',
+    award_amount_val: 60000,
+    application_deadline: '2026-11-20',
+    required_documents: [
+      'NEET Rank Card & College Allotment Letter',
+      'Academic Marksheets for all previous semesters/years',
+      'Salary Slips / IT Returns / Income Certificate of Parents',
+      'Fee breakdown receipt stamped by Medical Dean'
+    ],
+    official_url: 'https://www.tatatrusts.org',
+    eligibility_conditions: [
+      'Enrolled in recognized medical college for MBBS/BDS/Nursing',
+      'Cleared all previous academic terms without backlogs with >=70%',
+      'Family income less than ₹6 Lakhs per year'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Foundation Grant'
+  },
+  {
+    id: 'sch-006',
+    name: 'ONGC Foundation Scholarship for Meritorious Economically Weaker Students',
+    provider: 'Oil and Natural Gas Corporation (ONGC) Foundation',
+    description: 'Corporate CSR scholarship to support underprivileged talented students pursuing Engineering, MBBS, MBA, or Master in Geophysics/Geology.',
+    eligible_courses: ['Engineering', 'Medicine', 'Commerce', 'Pure Sciences', 'Computer Science'],
+    education_level: ['Undergraduate', 'Postgraduate'],
+    min_marks: 60.0,
+    max_family_income: 450000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: '₹48,000 / year',
+    award_amount_val: 48000,
+    application_deadline: '2026-12-10',
+    required_documents: [
+      'Income Certificate verified by Tehsildar/SDM',
+      'Caste / EWS Certificate (if applicable)',
+      'Standard 12th / Graduation Marksheet',
+      'College Identity Card & Bonafide Letter',
+      'Bank Account details with PAN Card'
+    ],
+    official_url: 'https://www.ongcscholar.org',
+    eligibility_conditions: [
+      'Minimum 60% or 6.0 CGPA in Class 12 / previous qualifying degree',
+      'Annual family income less than ₹4.5 Lakh',
+      'Must be full-time student in 1st year of professional degree'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Corporate Scheme'
+  },
+  {
+    id: 'sch-007',
+    name: 'Adobe Women in Technology Scholarship',
+    provider: 'Adobe Research',
+    description: 'Global initiative recognizing outstanding female undergraduate and masters students in Computer Science, Data Science, and Software Engineering.',
+    eligible_courses: ['Computer Science', 'Engineering'],
+    education_level: ['Undergraduate', 'Postgraduate'],
+    min_marks: 75.0,
+    max_family_income: 2000000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'Female',
+    disability_friendly: true,
+    award_amount: '₹1,50,000 + Tech Mentorship',
+    award_amount_val: 150000,
+    application_deadline: '2026-12-05',
+    required_documents: [
+      'Curriculum Vitae (CV / Resume)',
+      'Academic Transcripts',
+      'Three Essay Responses demonstrating innovation and technical leadership',
+      'Letter of Recommendation from Academic Faculty'
+    ],
+    official_url: 'https://research.adobe.com/scholarship',
+    eligibility_conditions: [
+      'Identifies as female',
+      'Full-time student majoring in Computer Science or closely related field',
+      'Maintain strong academic record (equivalent to 75%+ or 8.0+ CGPA)'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Industry Fellowship'
+  },
+  {
+    id: 'sch-008',
+    name: 'State Merit Scholarship Scheme - Maharashtra & Karnataka Region',
+    provider: 'State Directorate of Higher Education',
+    description: 'Need-cum-merit scholarship for domicile students of participating states pursuing degree courses in government-recognized state colleges.',
+    eligible_courses: ['Arts & Humanities', 'Commerce', 'Pure Sciences', 'Engineering'],
+    education_level: ['Undergraduate', 'Postgraduate'],
+    min_marks: 65.0,
+    max_family_income: 350000,
+    eligible_states: ['Maharashtra', 'Karnataka'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: '₹15,000 / year',
+    award_amount_val: 15000,
+    application_deadline: '2026-11-25',
+    required_documents: [
+      'State Domicile Certificate',
+      'Caste / EWS Validity Certificate (if claimed)',
+      'Income Proof for current financial year',
+      'College Admission Fee Receipt'
+    ],
+    official_url: 'https://mahadbt.maharashtra.gov.in',
+    eligibility_conditions: [
+      'Must be permanent resident / domicile of Maharashtra or Karnataka',
+      'Enrolled in state government or aided university',
+      'Family income within ₹3.5 Lakh'
+    ],
+    is_sample: false,
+    verification_status: 'Verified State Portal Scheme'
+  },
+  {
+    id: 'sch-009',
+    name: 'National Fellowship for Students with Disabilities (NFPwD)',
+    provider: 'Department of Empowerment of Persons with Disabilities, Govt. of India',
+    description: 'Fellowships provided to students with benchmark disabilities pursuing M.Phil / Ph.D. or professional higher education.',
+    eligible_courses: ['Arts & Humanities', 'Pure Sciences', 'Engineering', 'Commerce', 'Medicine', 'Computer Science'],
+    education_level: ['Undergraduate', 'Postgraduate', 'Doctoral'],
+    min_marks: 50.0,
+    max_family_income: 800000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: '₹31,000 / month + Contingency',
+    award_amount_val: 372000,
+    application_deadline: '2026-12-20',
+    required_documents: [
+      'Disability Certificate (>40% benchmark disability) issued by CMO/Civil Surgeon',
+      'Postgraduate / Degree marksheet',
+      'Admission verification form from University Registrar',
+      'Aadhaar linked bank details'
+    ],
+    official_url: 'https://disabilityaffairs.gov.in',
+    eligibility_conditions: [
+      'Minimum 40% benchmark disability documented by medical board',
+      'Enrolled in recognized higher education or research program',
+      'No other simultaneous central government fellowship'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Official Scheme'
+  },
+  {
+    id: 'sch-010',
+    name: 'Reliance Foundation Undergraduate & Postgraduate Scholarships',
+    provider: 'Reliance Foundation',
+    description: 'Merit-cum-means scholarship supporting ambitious students across all degree courses to unlock leadership and socio-economic potential.',
+    eligible_courses: ['Engineering', 'Computer Science', 'Pure Sciences', 'Commerce', 'Arts & Humanities', 'Medicine'],
+    education_level: ['Undergraduate', 'Postgraduate'],
+    min_marks: 70.0,
+    max_family_income: 1500000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: 'Up to ₹2,00,000 for degree duration',
+    award_amount_val: 200000,
+    application_deadline: '2026-11-28',
+    required_documents: [
+      'Class 12th Marksheet',
+      'Family Income Proof (<₹15 Lakh, preference given to <₹2.5 Lakh)',
+      'College Bonafide Certificate',
+      'Online Aptitude Test Scorecard'
+    ],
+    official_url: 'https://www.reliancefoundation.org',
+    eligibility_conditions: [
+      'Resident Indian citizen',
+      'First year undergraduate student enrolled in a full-time regular degree',
+      'Passing mandatory online aptitude test conducted by Foundation'
+    ],
+    is_sample: false,
+    verification_status: 'Verified Foundation Grant'
+  },
+  {
+    id: 'sch-011',
+    name: '[Sample Demo] Global AI & Robotics Young Innovators Grant',
+    provider: 'Apex Innovation Lab (Demonstration Record)',
+    description: 'DEMONSTRATION RECORD: Illustrative private sector tech grant for students building artificial intelligence, robotics, or computer vision capstone projects.',
+    eligible_courses: ['Computer Science', 'Engineering'],
+    education_level: ['Undergraduate', 'Postgraduate', 'Doctoral'],
+    min_marks: 75.0,
+    max_family_income: 1000000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: '₹75,000 One-time Equipment Grant',
+    award_amount_val: 75000,
+    application_deadline: '2026-12-25',
+    required_documents: [
+      'GitHub Repository Link or Project Prototype',
+      'Faculty Mentor Endorsement',
+      'College Identity Card'
+    ],
+    official_url: 'https://example.com/demo-ai-grant',
+    eligibility_conditions: [
+      'Enrolled in CS / AI / Robotics degree program',
+      'Demonstrated coding or research portfolio',
+      'Sample demonstration record only'
+    ],
+    is_sample: true,
+    verification_status: 'Demonstration / Sample Record'
+  },
+  {
+    id: 'sch-012',
+    name: '[Sample Demo] Rural First-Generation College Scholar Fund',
+    provider: 'Community Uplift Trust (Demonstration Record)',
+    description: 'DEMONSTRATION RECORD: Illustrative need-based fund prioritizing first-generation learners from rural background entering undergraduate studies.',
+    eligible_courses: ['Arts & Humanities', 'Commerce', 'Pure Sciences', 'Diploma'],
+    education_level: ['Undergraduate', 'Diploma'],
+    min_marks: 55.0,
+    max_family_income: 200000,
+    eligible_states: ['All India'],
+    applicable_categories: ['General', 'OBC', 'SC', 'ST', 'EWS'],
+    gender_preference: 'All',
+    disability_friendly: true,
+    award_amount: '₹25,000 / year',
+    award_amount_val: 25000,
+    application_deadline: '2027-01-15',
+    required_documents: [
+      'First Generation Learner Self-Declaration / Certificate',
+      'Village Panchayat Income & Residence Proof',
+      'Admission Receipt'
+    ],
+    official_url: 'https://example.com/demo-rural-fund',
+    eligibility_conditions: [
+      'First in the immediate family to attend university',
+      'Annual family income <= ₹2,00,000',
+      'Sample demonstration record only'
+    ],
+    is_sample: true,
+    verification_status: 'Demonstration / Sample Record'
+  }
+];
+
+export const DEMO_PROFILES: Record<string, StudentProfile> = {
+  aarav: {
+    id: 'p1',
+    user_id: 'u1',
+    full_name: 'Aarav Sharma',
+    dob: '2004-05-14',
+    age: 20,
+    gender: 'Male',
+    state: 'Maharashtra',
+    education_level: 'Undergraduate',
+    course: 'Computer Science & Engineering',
+    institution: 'National Institute of Technology',
+    marks: 84.5,
+    family_income: 320000,
+    category: 'OBC',
+    disability_status: false,
+    achievements: 'State Mathematics Olympiad Rank 4, Winner Hackathon 2025'
+  },
+  ananya: {
+    id: 'p2',
+    user_id: 'u2',
+    full_name: 'Ananya Sen',
+    dob: '2005-08-22',
+    age: 19,
+    gender: 'Female',
+    state: 'West Bengal',
+    education_level: 'Undergraduate',
+    course: 'Pure Sciences',
+    institution: 'Jadavpur University',
+    marks: 88.0,
+    family_income: 450000,
+    category: 'General',
+    disability_status: false,
+    achievements: 'KVPY Fellow candidate, Published research paper in physics'
+  },
+  rajesh: {
+    id: 'p3',
+    user_id: 'u3',
+    full_name: 'Rajesh Kumar',
+    dob: '2003-11-10',
+    age: 21,
+    gender: 'Male',
+    state: 'Karnataka',
+    education_level: 'Undergraduate',
+    course: 'Arts & Humanities',
+    institution: 'Government Degree College Bangalore',
+    marks: 68.0,
+    family_income: 180000,
+    category: 'SC',
+    disability_status: false,
+    achievements: 'First-Generation College Student, District debate champion'
+  },
+  sneha: {
+    id: 'p4',
+    user_id: 'u4',
+    full_name: 'Sneha Reddy',
+    dob: '2004-02-18',
+    age: 20,
+    gender: 'Female',
+    state: 'Telangana',
+    education_level: 'Undergraduate',
+    course: 'Medicine',
+    institution: 'Osmania Medical College',
+    marks: 81.0,
+    family_income: 400000,
+    category: 'EWS',
+    disability_status: false,
+    achievements: 'NEET Top 2 percentile, Community rural health volunteer'
+  }
+};
